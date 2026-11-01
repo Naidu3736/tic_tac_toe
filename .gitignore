@@ -1,0 +1,18 @@
+# build
+build/
+*.o
+*.a
+*.so
+*.out
+*.exe
+
+# docs
+docs/html/
+docs/latex/
+
+# IDE
+.cache/
+.vscode/
+
+# CMake generated
+compile_commands.json
