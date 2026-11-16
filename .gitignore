@@ -16,3 +16,6 @@ docs/latex/
 
 # CMake generated
 compile_commands.json
+
+# Clangd config
+compile_flags.txt
