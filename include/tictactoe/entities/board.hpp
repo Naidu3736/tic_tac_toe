@@ -30,7 +30,7 @@ namespace naidu {
     class Board { 
         public:
             /** @brief Tamaño máximo del tablero */
-            static constexpr int k_max_dim = 3;
+            static constexpr int k_max_dim = 9;
 
             /** 
              * @brief Constructor por defecto que incializa un tablero
@@ -57,7 +57,7 @@ namespace naidu {
              * @brief Obtener el número total de celdas del tablero.
              * @return Tamaño del tablero (9);
              */
-            std::size_t dim() const;
+            std::size_t size() const;
 
             /**
              * @brief Vaciar todas las celdas del tablero.

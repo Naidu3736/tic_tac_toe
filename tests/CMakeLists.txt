@@ -1,4 +1,7 @@
-add_executable(tests_tictactoe test_main.cpp)
+add_executable(tests_tictactoe
+    test_main.cpp
+    entities/test_board.cpp
+)
 
 target_link_libraries(tests_tictactoe PRIVATE tictactoe_core)
 
