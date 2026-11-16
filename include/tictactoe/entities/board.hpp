@@ -1,7 +1,7 @@
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
-#include <vector>
+#include <array>
 #include <cstddef>
 
 namespace naidu {
@@ -27,15 +27,14 @@ namespace naidu {
      * @date 26-08-2026
      * @version 2.0
      */
-    class Board {
-        private:
-            /** @brief Tablero de NxN celdas */
-            std::vector<State> m_board;
-
+    class Board { 
         public:
+            /** @brief Tamaño máximo del tablero */
+            static constexpr int k_max_dim = 3;
+
             /** 
-             * @brief Constructor que incializa el tablero
-             *        con todas sus celdas vacias  .
+             * @brief Constructor por defecto que incializa un tablero
+             *        N*N con todas sus celdas vacias.
              */
             Board();
 
@@ -58,12 +57,17 @@ namespace naidu {
              * @brief Obtener el número total de celdas del tablero.
              * @return Tamaño del tablero (9);
              */
-            std::size_t size() const;
+            std::size_t dim() const;
 
             /**
              * @brief Vaciar todas las celdas del tablero.
              */
             void clear();
+
+        private:
+            /** @brief Tablero de NxN celdas */
+            std::array<State, k_max_dim> m_board;
+
     };
 }
 
