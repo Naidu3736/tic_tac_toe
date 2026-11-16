@@ -30,3 +30,21 @@ TEST_CASE("Board: Operador [] de solo lectura") {
     
     CHECK_EQ(state, naidu::State::Empty);
 }
+
+TEST_CASE("Board: size() devuelve el número de celdas correcta") {
+    naidu::Board board;
+
+    CHECK_EQ(board.size(), 9);
+}
+
+TEST_CASE("Board: clear() vacía el tablero") {
+    naidu::Board board;
+
+    board[0] = naidu::State::X;
+    board[1] = naidu::State::O;
+
+    board.clear();
+
+    for (std::size_t i = 0; i < board.size(); ++i) 
+        CHECK_EQ(board[i], naidu::State::Empty);
+}

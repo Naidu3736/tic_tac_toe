@@ -3,8 +3,7 @@
 namespace naidu {
 
     Board::Board() {
-        for (auto& cell : m_board) 
-            cell = State::Empty;
+        clear();
     }
 
     State& Board::operator[](std::size_t index) {
@@ -20,7 +19,8 @@ namespace naidu {
     }
 
     void Board::clear() {
-
+        for (auto& cell : m_board) 
+            cell = State::Empty;
     }
 
 }
