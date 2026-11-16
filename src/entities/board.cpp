@@ -1,17 +1,19 @@
-#include "board.hpp"
+#include "tictactoe/entities/board.hpp"
+#include <stdexcept>
 
 namespace naidu {
 
     Board::Board() {
-        
+        for (auto& cell : m_board) 
+            cell = State::Empty;
     }
 
     State& Board::operator[](std::size_t index) {
-
+        
     }
 
-    const Board::State& operator[](std::size_t index) const {
-
+    const State& Board::operator[](std::size_t index) const {
+        
     }
 
     std::size_t Board::size() const {
