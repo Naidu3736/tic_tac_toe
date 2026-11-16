@@ -1,5 +1,4 @@
 #include "tictactoe/entities/board.hpp"
-#include <stdexcept>
 
 namespace naidu {
 
