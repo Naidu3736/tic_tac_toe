@@ -1,7 +1,7 @@
-#include "player.hpp"
+#include "tictactoe/entities/player.hpp"
 
 namespace naidu {
-    Player::Player(const std::string & name)
+    Player::Player(std::string_view name)
         : m_name(name)
         , m_wins(0) {}
 
@@ -9,7 +9,7 @@ namespace naidu {
         m_wins++;
     }
 
-    std::string Player::name() const {
+    const std::string& Player::name() const {
         return m_name;
     }
 

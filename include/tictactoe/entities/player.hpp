@@ -2,6 +2,7 @@
 #define PLAYER_HPP
 
 #include <string>
+#include <string_view>
 
 namespace naidu {
     /**
@@ -26,7 +27,7 @@ namespace naidu {
              * @brief Constructor que inicializa un jugador
              * @param name Nombre del jugador
              */
-            Player(const std::string &name);
+            explicit Player(std::string_view name);
 
             /** 
              * @brief Incrementa el contador de victorias en uno
@@ -37,7 +38,7 @@ namespace naidu {
              * @brief Obtiene el nombre del jugador
              * @return Nombre del jugador
              */
-            std::string name() const;
+            const std::string& name() const;
 
             /**
              * @brief Obteniene el número de victorias
