@@ -5,6 +5,7 @@
 
 #include <array>
 #include <cstddef>
+#include <string_view>
 
 namespace naidu {
 
@@ -64,7 +65,7 @@ namespace naidu {
              * @param player1_name 
              * @param player2_name 
              */
-            GameState(const std::string &player1_name, const std::string &player2_name);
+            GameState(std::string_view player1_name, std::string_view player2_name);
 
             /**
              * @brief Devuelve el jugador actual de la ronda
