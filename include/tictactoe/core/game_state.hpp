@@ -86,7 +86,7 @@ namespace naidu {
              * 
              * @return const Status 
              */
-            const Status status() const;
+            Status status() const;
 
             /**
              * @brief Devuelve la ronda actual de la partida
