@@ -29,9 +29,6 @@ namespace naidu {
      */
     class Board { 
         public:
-            /** @brief Tamaño máximo del tablero */
-            static constexpr int k_max_dim = 9;
-
             /** 
              * @brief Constructor por defecto que incializa un tablero
              *        N*N con todas sus celdas vacias.
@@ -60,13 +57,23 @@ namespace naidu {
             std::size_t size() const;
 
             /**
+             * @brief Obtener la dimesión del tablero
+             * 
+             * @return std::size_t
+             */
+            std::size_t dim() const;
+
+            /**
              * @brief Vaciar todas las celdas del tablero.
              */
             void clear();
 
         private:
+            /** @brief Tamaño máximo del tablero */
+            static constexpr int k_max_dim = 3;
+
             /** @brief Tablero de NxN celdas */
-            std::array<State, k_max_dim> m_board;
+            std::array<State, k_max_dim * k_max_dim> m_board;
 
     };
 }

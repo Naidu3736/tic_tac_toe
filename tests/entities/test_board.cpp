@@ -37,6 +37,12 @@ TEST_CASE("Board: size() devuelve el número de celdas correcta") {
     CHECK_EQ(board.size(), 9);
 }
 
+TEST_CASE("Board: dim() devuelve la dimensión correcta") {
+    naidu::Board board;
+
+    CHECK_EQ(board.dim(), 3);
+}
+
 TEST_CASE("Board: clear() vacía el tablero") {
     naidu::Board board;
 

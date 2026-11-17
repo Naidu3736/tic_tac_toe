@@ -18,6 +18,10 @@ namespace naidu {
         return m_board.size();
     }
 
+    std::size_t Board::dim() const {
+        return k_max_dim;
+    }
+
     void Board::clear() {
         for (auto& cell : m_board) 
             cell = State::Empty;
