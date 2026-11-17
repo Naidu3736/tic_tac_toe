@@ -38,7 +38,6 @@ namespace naidu {
             Board m_board;
             std::array<Player, 2> m_players;    
             std::size_t m_current_player_idx;
-            Status m_status;
             unsigned int m_round;
 
             /**
@@ -86,7 +85,7 @@ namespace naidu {
              * 
              * @return const Status 
              */
-            Status status() const;
+            Status status();
 
             /**
              * @brief Devuelve la ronda actual de la partida
