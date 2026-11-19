@@ -1,7 +1,6 @@
 #include "tictactoe/entities/player.hpp"
 
 #include <doctest/doctest.h>
-#include <locale>
 
 TEST_CASE("Player: Constructor por defecto") {
     naidu::Player player("player_1");
