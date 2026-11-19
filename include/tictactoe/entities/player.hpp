@@ -1,6 +1,9 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+#include "tictactoe/entities/board.hpp"
+
+#include <optional>
 #include <string>
 #include <string_view>
 
@@ -15,13 +18,6 @@ namespace naidu {
      * @version 1.0
      */
     class Player {
-        private:
-            /** @brief Nombre del jugador */
-            std::string m_name;
-
-            /** @brief Número de victorias del jugador */
-            unsigned int m_wins;
-
         public:
             /** 
              * @brief Constructor que inicializa un jugador
@@ -41,10 +37,34 @@ namespace naidu {
             const std::string& name() const;
 
             /**
+             * @brief Devuelve el símbolo con el que juega el jugador 
+             * 
+             * @return State: Símbolo asignado al jugador (X u O)
+             */
+            std::optional<State> symbol() const;
+
+            /**
+             * @brief Asigna un símbolo al jugador (X y O)
+             * 
+             * @param symbol 
+             */
+            void set_symbol(State symbol);
+
+            /**
              * @brief Obteniene el número de victorias
              * @return Número de victorias
              */
             unsigned int wins() const;
+
+        private:
+            /** @brief Nombre del jugador */
+            std::string m_name;
+
+            /** @brief Simbolo vinculado al jugador */
+            std::optional<State> m_symbol;
+
+            /** @brief Número de victorias del jugador */
+            unsigned int m_wins;
     };
 }
 

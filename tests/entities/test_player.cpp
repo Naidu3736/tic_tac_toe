@@ -1,11 +1,13 @@
 #include "tictactoe/entities/player.hpp"
 
 #include <doctest/doctest.h>
+#include <locale>
 
 TEST_CASE("Player: Constructor por defecto") {
     naidu::Player player("player_1");
 
     CHECK_EQ(player.name(), "player_1");
+    CHECK_EQ(player.symbol(), std::nullopt);
     CHECK_EQ(player.wins(), 0u);
 }
 
@@ -22,6 +24,22 @@ TEST_CASE("Player: add_wins() incrementa el contador") {
     // Segunda victoria
     player.add_wins();
     CHECK_EQ(player.wins(), 2u);
+}
+
+
+TEST_CASE("Player: symbol() devuelve el símbolo del jugador") {
+    naidu::Player player("player_1");
+
+    CHECK_EQ(player.symbol(), std::nullopt);
+}
+
+TEST_CASE("Player: set_symbol() asignal el símbolo al jugador") {
+    naidu::Player player("player_1");
+
+    player.set_symbol(naidu::State::O);
+    auto symbol = player.symbol();
+
+    CHECK_EQ(*symbol, naidu::State::O);
 }
 
 TEST_CASE("Player: wins() devuelva el valor actual del contador") {
