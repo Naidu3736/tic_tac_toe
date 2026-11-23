@@ -35,27 +35,22 @@ namespace naidu {
      */
     class GameState {
         private:
-            Board m_board;
-            std::array<Player, 2> m_players;    
-            std::size_t m_current_player_idx;
-            unsigned int m_round;
-
             /**
              * @brief Valida si el jugador con el simbolo ha ganado.
              * 
              * @param symbol 
-             * @return true 
-             * @return false 
+             * @return true Si el jugador con el símbolo ha ganado
+             * @return false Si el jugador con el símbolo no ha ganado
              */
-            bool check_win(State symbol);
+            bool check_win(State symbol) const;
 
             /**
              * @brief Valida si la partida ha terminado en empate
              * 
-             * @return true 
-             * @return false 
+             * @return true Si se ha llenado el tablero sin un ganador
+             * @return false Si ha habido un ganador o no se ha llenado el tablero
              */
-            bool check_tie();
+            bool check_tie() const;
 
         public:
             /**
@@ -69,38 +64,38 @@ namespace naidu {
             /**
              * @brief Devuelve el jugador actual de la ronda
              * 
-             * @return const Player& 
+             * @return const Player& Jugador de solo lectura
              */
             const Player& current_player() const;
 
             /**
              * @brief Devuelve el estado actual del tablero
              * 
-             * @return const Board& 
+             * @return const Board& Tablero de solo lectura
              */
             const Board& board() const;
 
             /**
              * @brief Devuelve el estado actual de la partida
              * 
-             * @return const Status 
+             * @return Status Estado actual de la partida 
              */
-            Status status();
+            Status status() const;
 
             /**
              * @brief Devuelve la ronda actual de la partida
              * 
-             * @return const unsigned int 
+             * @return Ronda actual de la partida
              */
-            const unsigned int round() const;
+            std::size_t round() const;
             
             
             /**
              * @brief Valida si el moviento es permitido
              * 
              * @param index 
-             * @return true 
-             * @return false 
+             * @return true Si es un movimiento legal
+             * @return false Si no es un movimiento legal
              */
             bool make_move(std::size_t index);
 
@@ -108,6 +103,19 @@ namespace naidu {
              * @brief Restablece el estado del juego
              */
             void reset();
+
+        private:
+            /** @brief Tablero de la partida en curso */
+            Board m_board;
+
+            /** @brief Par de jugadores de la partida */
+            std::array<Player, 2> m_players;    
+
+            /** @brief Índice al jugador actual de la ronda */
+            std::size_t m_current_player_idx;
+
+            /** @brief Acumulador de rondas de la partida */
+            unsigned int m_round;
     };
     
 }

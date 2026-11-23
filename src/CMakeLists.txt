@@ -4,10 +4,10 @@ target_sources(tictactoe_core
     PRIVATE
         entities/board.cpp
         entities/player.cpp
+        core/game_state.cpp
+#        core/game_loop.cpp
 #        ui/input.cpp
 #        ui/tui.cpp
-#        core/game_loop.cpp
-#        core/game_state.cpp
 
     PUBLIC
         FILE_SET HEADERS
@@ -16,8 +16,8 @@ target_sources(tictactoe_core
         FILES
             ${CMAKE_SOURCE_DIR}/include/tictactoe/entities/board.hpp
             ${CMAKE_SOURCE_DIR}/include/tictactoe/entities/player.hpp
+            ${CMAKE_SOURCE_DIR}/include/tictactoe/core/game_state.hpp
+#            ${CMAKE_SOURCE_DIR}/include/tictactoe/core/game_loop.hpp
 #            ${CMAKE_SOURCE_DIR}/include/tictactoe/ui/input.hpp
 #            ${CMAKE_SOURCE_DIR}/include/tictactoe/ui/tui.hpp
-#            ${CMAKE_SOURCE_DIR}/include/tictactoe/core/game_state.hpp
-#            ${CMAKE_SOURCE_DIR}/include/tictactoe/core/game_loop.hpp
 )
