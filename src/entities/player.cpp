@@ -28,4 +28,15 @@ namespace naidu {
         return m_wins;
     }
 
+    bool Player::operator==(const Player &other) const {
+        if (this == &other)
+            return true;
+
+        return m_name == other.name();
+    }
+ 
+    bool Player::operator!=(const Player &other) const {
+        return !(*this == other);
+    }
+
 }

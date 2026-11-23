@@ -56,6 +56,24 @@ namespace naidu {
              */
             unsigned int wins() const;
 
+            /**
+             * @brief Compara si dos jugadores son iguales
+             * 
+             * @param other 
+             * @return true Si son el mismo jugador
+             * @return false Si no son el mismo jugador
+             */
+            bool operator==(const Player &other) const;
+
+            /**
+             * @brief Compara si dos jugadores no son iguales
+             * 
+             * @param other 
+             * @return true Si no son el mismo jugador
+             * @return false Si son el mismo jugador
+             */
+            bool operator!=(const Player &other) const;
+
         private:
             /** @brief Nombre del jugador */
             std::string m_name;
